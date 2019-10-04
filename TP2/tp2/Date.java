@@ -15,10 +15,78 @@ public class Date {
 	//variables d'instance
 	int jour;
 	int mois;
-	int année;
+	int annee;
 	
 	
 	
+	public Date(int jour, int mois, int annee) {
+		super();
+		this.jour = jour;
+		this.mois = mois;
+		this.annee = annee;
+	}
+
+	
+	/**
+	 * @return the jour
+	 */
+	public int getJour() {
+		return jour;
+	}
+
+
+
+	/**
+	 * @param jour the jour to set
+	 */
+	public void setJour(int jour) {
+		this.jour = jour;
+	}
+
+
+
+	/**
+	 * @return the mois
+	 */
+	public int getMois() {
+		return mois;
+	}
+
+
+
+	/**
+	 * @param mois the mois to set
+	 */
+	public void setMois(int mois) {
+		this.mois = mois;
+	}
+
+
+
+	/**
+	 * @return the annee
+	 */
+	public int getAnnee() {
+		return annee;
+	}
+
+
+
+	/**
+	 * @param annee the annee to set
+	 */
+	public void setAnnee(int annee) {
+		this.annee = annee;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Date [jour=" + jour + ", mois=" + mois + ", annee=" + annee + "]";
+	}
+
+
 	/**
 	 * La méthode main permet de tester la classe date en créant un objet 
 	 * au départ des arguments de la ligne de commande.  Trois arguments sont attendus, sous forme d'entiers : 
@@ -26,9 +94,9 @@ public class Date {
 	 * @param args les arguments de la ligne de commande
 	 */
 	public static void main(String [] args) {
-		Date d = new Date();
-		d.jour = Integer.parseInt(args[0]);
-		d.mois = Integer.parseInt(args[1]);
-		d.année = Integer.parseInt(args[2]);
+		Date d = new Date(27, 02, 1999);
+		//d.setJour(20);
+		System.out.println(d);
+		
 	}
 }
