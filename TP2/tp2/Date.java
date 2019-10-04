@@ -13,9 +13,9 @@ package tp2;
 public class Date {
 	
 	//variables d'instance
-	int jour;
-	int mois;
-	int annee;
+	private int jour;
+	private int mois;
+	private int annee;
 	
 	
 	
@@ -40,7 +40,12 @@ public class Date {
 	 * @param jour the jour to set
 	 */
 	public void setJour(int jour) {
-		this.jour = jour;
+		if(jour <= 31 && jour >=1) {
+			this.jour = jour;
+		}
+		else {
+			System.out.println("Date invalide");
+		}
 	}
 
 

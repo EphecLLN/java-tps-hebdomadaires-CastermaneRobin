@@ -65,11 +65,15 @@ public class Etudiant {
 		Etudiant etu = new Etudiant("Castermane", "Robin", 201674, new Date(27, 02, 1999));
 		int anee2 = etu.dateNaissance.getAnnee();
 		int age = 2019 - anee2;
-		System.out.println(age);
-		System.out.println(etu.nom);
-		System.out.println(etu);
+		//System.out.println(age);
+		
+		//etu.dateNaissance.setJour(33);
+		System.out.println(etu.dateNaissance.getJour());
+	
+		//System.out.println(etu.nom);
+		//System.out.println(etu);
 		etu.setPrenom("Victor");
-		System.out.println(etu.getPrenom());
+		//System.out.println(etu.getPrenom());
 		
 	}
 
