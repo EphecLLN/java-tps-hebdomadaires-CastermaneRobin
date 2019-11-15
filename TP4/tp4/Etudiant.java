@@ -133,7 +133,6 @@ public class Etudiant {
 		Etudiant etu1 = new Etudiant("Castermane", "Robin", new Date(27, 02, 1999));
 		Etudiant etu2 = new Etudiant("Castermane", "Florent", new Date(23, 03, 2000));
 
-		
-	}
+			}
 
 }

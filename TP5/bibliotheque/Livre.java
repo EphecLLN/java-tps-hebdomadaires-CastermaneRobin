@@ -27,7 +27,7 @@ public class Livre {
 		setNomAuteur(nomAuteur);
 		setTitre(titre);
 		setAnneeEdition(anneeEdition);
-		setPages(pages);
+		setPage(pages);
 	}
 	
 	//---------------------GET & SET------------------------//
@@ -42,7 +42,7 @@ public class Livre {
 	 * @param nomAuteur the nomAuteur to set
 	 */
 	public void setNomAuteur(String nomAuteur) {
-		if(nomAuteur == null) {
+		if(nomAuteur == "") {
 			this.nomAuteur = "Auteur inconnu";
 		}else {
 			this.nomAuteur = nomAuteur;
@@ -60,7 +60,7 @@ public class Livre {
 	 * @param titre the titre to set
 	 */
 	public void setTitre(String titre) {
-		if(titre == null) {
+		if(titre == "") {
 			this.titre = "Titre inconnu";
 		}else {
 			this.titre = titre;
@@ -80,37 +80,26 @@ public class Livre {
 	public void setAnneeEdition(int anneeEdition) {
 		this.anneeEdition = anneeEdition;
 	}
-
+	
+	
 	/**
-	 * @return the pages
+	 * @param pages the pages to set
 	 */
-	public String[] getPages() {
-		return pages;
+	public void setPage(String[] pages) {
+		this.pages = pages;
 	}
 
 	/**
 	 * @param i
 	 * @return
 	 */
-	public String getPages(int i) {
-		boolean test = false;
-		for(int j = 1; j <= this.pages.length; j++) {
-			if(i == j) {
-				test = true;
-			}
-		}
-		if(test) {
+	public String getPage(int i) {
+		if(i >= 0 && i < this.pages.length) {
 			return this.pages[i];
-		}else {
+		}
+		else {
 			return null;
 		}
-	}
-	
-	/**
-	 * @param pages the pages to set
-	 */
-	public void setPages(String[] pages) {
-		this.pages = pages;
 	}
 	
 	/**
@@ -118,27 +107,26 @@ public class Livre {
 	 * @param p
 	 * @return
 	 */
-	public String setPages(int i, String p) {
-		boolean test = false;
-		for(int j = 1; j <= this.pages.length; j++) {
-			if(i == j) {
-				test = true;
-			}
-		}
-		if(test) {
+	public String setPage(int i, String p) {
+		if(i >= 0 && i < this.pages.length) {
 			String valeur = this.pages[i];
 			this.pages[i] = p;
-			return valeur;
-		}else {
-			return "Erreur indice non conforme";
+			return valeur;	
+		}
+		else {
+			return " ";
 		}
 	}
+	
+	
 	
 	public String getFirstPage() {
 		return this.pages[0];
 	}
 	
-	public void extrait() {}
+	public String extrait() {
+		return this.pages[0];
+	}
 
 	//----------------------EQUALS & hashCode-----------------------//
 	@Override
@@ -184,10 +172,13 @@ public class Livre {
 
 	//-----------------------MAIN-------------------------//
 	public static void main(String[] args) {
-		Livre l = new Livre("Robin", "Le games", 2019);
+		Livre livre1 = new Livre("Robin","Le games", 2019);
 		
-	
-
+		livre1.setNomAuteur("");
+		System.out.println(livre1.nomAuteur);
+		
+		livre1.setPage(0, "Yolo");
+		System.out.println(livre1.getPage(0));
 	}
 
 }

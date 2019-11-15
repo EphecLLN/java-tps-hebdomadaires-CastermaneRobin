@@ -24,13 +24,7 @@ public class Dictionnaire extends Livre{
 	 * @return the pages
 	 */
 	public String getPages(int i) {
-		boolean test = false;
-		for(int j = 1; j <= this.dictPages[i].length; j++) {
-			if(i == j) {
-				test = true;
-			}
-		}
-		if(test) {
+		if(i >= 0 && i < this.dictPages[i].length) {
 			String chaineFinal = "";
 			for(int k = 0; k < dictPages[i].length; k++) {
 				chaineFinal += dictPages[i][k] + "\n";
@@ -40,14 +34,9 @@ public class Dictionnaire extends Livre{
 			return null;
 		}
 	}
-	public String setPages(int i, String [] p) {
-		boolean test = false;
-		for(int j = 1; j <= this.dictPages[i].length; j++) {
-			if(i == j) {
-				test = true;
-			}
-		}
-		if(test) {
+	
+	public String setPage(int i, String [] p) {
+		if(i >= 0 && i < this.dictPages[i].length) {
 			String valeur = "";
 			for(int j = 0; j < this.dictPages[i].length; j ++) {
 				valeur += p[j];
@@ -57,17 +46,14 @@ public class Dictionnaire extends Livre{
 		}
 		return null;
 	}
-	public String[] setDictPages(int i, String [] p) {
-		String[] valeurAvant = this.dictPages[i];
-		this.dictPages[i] = p;
-		return valeurAvant;
-	}
 	
 	public String getFirstDefinition() {
 		return this.dictPages[0][0];
 	}
 	
-	public void extrait() {}
+	public String extrait() {
+		return this.dictPages[0][0];
+	}
 	
 	public String getDefinition(int i, int j) {
 		return this.dictPages[i][j];
@@ -111,11 +97,13 @@ public class Dictionnaire extends Livre{
 
 	public static void main(String[] args) {
 		
+		String [] pagesDico = {"1","2","3","4","5","6","7","8","9","10"};
 		Dictionnaire monLivre = new Dictionnaire("Robin", "LaRousse", 2019);
 		
-		String [] p = {"1","2","3","4","5","6","7","8","9","10"};
-		monLivre.setPages(4, p);
-		System.out.println(monLivre.getPages(4));
+		
+		monLivre.setPage(0, pagesDico);
+		System.out.println(monLivre.setDefinition(0,3, "Le game"));
+		System.out.println(monLivre.getDefinition(0, 3));
 
 	}
 
