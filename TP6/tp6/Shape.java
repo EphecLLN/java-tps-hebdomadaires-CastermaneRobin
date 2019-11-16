@@ -1,6 +1,6 @@
 package tp6;
 
-public abstract class Shape {
+public abstract class Shape implements Transformable{
 	
 	private int id; //numéro d'ordre de création
 	private int absisse;
@@ -45,6 +45,18 @@ public abstract class Shape {
 		double surface = this.surface();
 		
 		return "nom: " + nomDeLaForme + "\t son emplacement: " + sonEmplacement + "\t perimètre: " + perimetre + "\t surface: " + surface;
+	}
+	
+	public void affiche() {
+		System.out.println(this.getClass().getSimpleName());
+	}
+	public void deplace(int deltaX, int deltaY) {
+		this.absisse = deltaX;
+		this.ordonne = deltaY;
+	}
+	public void agrandit(int facteur) {
+		this.absisse *= 2;
+		this.ordonne *= 2;
 	}
 	public static void main(String[] args) {
 		Shape monCarre = new Carre(3, 2, 5);
