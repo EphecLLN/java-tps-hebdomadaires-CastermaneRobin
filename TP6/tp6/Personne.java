@@ -21,11 +21,19 @@ public abstract class Personne implements Affichable{
 	 * @param prenom
 	 * @param dateDeNaissance
 	 */
-	public Personne(String nom, String prenom, Date dateDeNaissance, Date dateArriveEtablissement) {
-		this.nom = nom;
-		this.prenom = prenom;
-		this.dateDeNaissance = dateDeNaissance;
-		this.dateArriveEtablissement = dateArriveEtablissement;
+	public Personne(String nom, String prenom, Date dateDeNaissance, 
+			Date dateArriveEtablissement) throws DateArriveeInvalideException{
+		
+		Date ajd = new Date();
+		if(dateArriveEtablissement.getYear() < 2000 || dateArriveEtablissement.getYear() > (ajd.getYear() + 1900)) {
+			throw new DateArriveeInvalideException("Année arrivée dans l'etablissement invalide : " +
+					dateArriveEtablissement.getYear());
+		}else {
+			this.nom = nom;
+			this.prenom = prenom;
+			this.dateDeNaissance = dateDeNaissance;
+			this.dateArriveEtablissement = dateDeNaissance;
+		}
 	}
 	
 	
@@ -132,12 +140,17 @@ public abstract class Personne implements Affichable{
 	}
 	/**
 	 * @param args
+	 * @throws DateArriveeInvalideException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args){
 	
-		Personne p = new Etudiant("Robin", "Castermane", new Date(1990, 1, 27), new Date(2005, 10, 24));
-		System.out.println(p.getAge());
-		
+		try {
+			Personne p = new Etudiant("Robin", "Castermane", new Date(1990, 1, 27), new Date(1999, 10, 24));
+			System.out.println(p.getAge());
+		} catch (DateArriveeInvalideException e) {
+			
+		}
+		System.out.println("coucou");
 	}
 
 }

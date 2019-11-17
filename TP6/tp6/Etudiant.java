@@ -18,8 +18,9 @@ public class Etudiant extends Personne{
 	 * @param prenom
 	 * @param dateDeNaissance
 	 */
-	public Etudiant(String nom, String prenom, Date dateDeNaissance, Date dateArriveEtablissement) {
+	public Etudiant(String nom, String prenom, Date dateDeNaissance, Date dateArriveEtablissement) throws DateArriveeInvalideException{
 		super(nom, prenom, dateDeNaissance, dateArriveEtablissement);
+		
 		this.matricule = this.getAnciennete() + "" + this.getNom().charAt(0) + this.getPrenom().charAt(0);
 	}
 

@@ -16,7 +16,7 @@ public class Professeur extends Personne{
 	 * @param prenom
 	 * @param dateDeNaissance
 	 */
-	public Professeur(String nom, String prenom, Date dateDeNaissance, Date dateArriveEtablissement) {
+	public Professeur(String nom, String prenom, Date dateDeNaissance, Date dateArriveEtablissement) throws DateArriveeInvalideException{
 		super(nom, prenom, dateDeNaissance, dateArriveEtablissement);
 	}
 	
