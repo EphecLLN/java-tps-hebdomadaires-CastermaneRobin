@@ -48,7 +48,7 @@ public class TemperatureMVC {
 		TemperatureController tempcontrolFX = new TemperatureController(tempmod);
 		TemperatureVueGUIFX guifx = new TemperatureVueGUIFX(tempmod, tempcontrolFX);
 		tempcontrolFX.addView(guifx);
-        try {
+        /*try {
 			guifx.init();
 			Platform.startup(() -> {
 	            guifx.start(new Stage());
@@ -57,7 +57,7 @@ public class TemperatureMVC {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+         */
         
 	}
 }
