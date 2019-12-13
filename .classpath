@@ -8,6 +8,7 @@
 	<classpathentry kind="src" path="TP6"/>
 	<classpathentry kind="src" path="TP8"/>
 	<classpathentry kind="src" path="TP9"/>
+	<classpathentry kind="src" path="TP10"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_201">
 		<attributes>
 			<attribute name="module" value="true"/>
