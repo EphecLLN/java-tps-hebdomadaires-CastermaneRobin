@@ -7,7 +7,7 @@ public class ChatConsole {
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
 		boolean isServer = (args[0].equals("true")? true : false);
-		Chat chat = new Chat( isServer , 12345);
+		Chat chat = new Chat( isServer , 52345);
 		if(isServer){
 			String msg = chat.waitForMessage();
 			System.out.println(msg);

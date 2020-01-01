@@ -14,14 +14,22 @@ public class AccountOwner {
 	 */
 	public static void main(String[] args) {
 		BankAccount compte = new BankAccount(5000);
-		Thread salaire = new Salary(compte);
-		Thread card = new BankCard(compte);
-
+		Salary aug = new Salary(compte);
+		BankCard dim = new BankCard(compte);
+		
+		aug.start();
+		dim.start();
 		System.out.println(compte.getBalance());
-		salaire.start();
-		System.out.println(compte.getBalance());
-		card.start();
-		System.out.println(compte.getBalance());
+		
+		/*
+		double moyenne = 0;
+		for(int i = 0; i < 100; i++) {
+			aug.run();
+			dim.run();
+			moyenne += compte.getBalance();
+		}
+		System.out.println(moyenne/100);
+		*/
 	}
 
 }

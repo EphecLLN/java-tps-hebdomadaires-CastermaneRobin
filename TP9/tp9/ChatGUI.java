@@ -25,7 +25,6 @@ public class ChatGUI extends Application {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			
-			//System.out.println(ChatGUI.class.getResource("ChatGUI.fxml"));
 			loader.setLocation(ChatGUI.class.getResource("ChatGUI.fxml"));
 			rootLayout = (BorderPane) loader.load();
 			

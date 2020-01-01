@@ -30,6 +30,7 @@ public class Chat {
 	 */
 	public void sendMessage(String msg) {
 		//TODO
+		System.out.println(msg);
 	}
 
 	/*
@@ -49,14 +50,23 @@ public class Chat {
 	 * @exception IOException s'il y a un problème pendant l'établissement de la connexion
 	 */
 	public void connect(boolean isServer, int port, String addr) throws IOException{
-        //TODO		
+        ServerSocket serveur = new ServerSocket(port);
+        socket = serveur.accept();
+        in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 	}
 	/*
 	 * Ferme tous les flux d'une connexion établie.
 	 * @exception IOException en cas d'erreur dans la fermeture de connexion
 	 */
 	public void closeConnection() throws IOException{
-        //TODO
+        try {
+        	in.close();
+        	out.close();
+        	socket.close();
+        }catch(IOException e){
+        	System.out.println("erreur: " + e);
+        }
 	}
 
 }
