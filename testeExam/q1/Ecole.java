@@ -107,8 +107,8 @@ public class Ecole {
 		UCL.addCours(informatique);
 		UCL.addCours(reseau);
 		
-		System.out.println(etu1.getClass().getSimpleName());
-		System.out.println(UCL);
+		System.out.println(etu1.compareTo(etu2));
+		//System.out.println(UCL);
 	}
 
 }

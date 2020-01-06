@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="372.0" prefWidth="507.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="question2.LaboratoireGUIController">
+   <children>
+      <TextArea fx:id="allMesureField" prefHeight="241.0" prefWidth="507.0" />
+      <TextField fx:id="mesureField" layoutX="14.0" layoutY="254.0" prefHeight="26.0" prefWidth="242.0" />
+      <Button layoutX="268.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleAjouter" prefHeight="31.0" prefWidth="225.0" text="Ajouter" />
+      <Button layoutX="14.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleSupprimerDernier" prefHeight="31.0" prefWidth="183.0" text="Supprimer Dernier" />
+      <Button layoutX="222.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleNettoyerTout" prefHeight="31.0" prefWidth="159.0" text="Nettoyer Tout" />
+      <Button layoutX="398.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleFin" prefHeight="31.0" prefWidth="91.0" text="Fin" />
+   </children>
+</AnchorPane>

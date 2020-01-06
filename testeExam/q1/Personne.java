@@ -94,6 +94,19 @@ public class Personne implements Comparable<Personne>{
 
 	@Override
 	public String toString() {
-		return "Personne [nom=" + nom + ", prénom=" + prenom + ", âge= " + this.age();
+		return "Personne [nom=" + nom + ", prï¿½nom=" + prenom + ", ï¿½ge= " + this.age();
+	}
+	
+	public static void main(String args[]) {
+	
+		Personne p1 = new Personne("Castermane", "Robin", "27/02/1999");
+		Personne p2 = new Personne("Castermane", "FLorent", "27/02/1999");
+		
+		System.out.println(p1.compareTo(p2));
+		System.out.println(p2.compareTo(p1));
 	}
 }
+
+
+
+
